@@ -77,3 +77,80 @@ prev.addEventListener('click', function(){
     let items = document.querySelectorAll('.slides');
     document.querySelector('.slider').prepend(items[items.length-1])
 })
+
+
+//information section
+// let info = document.querySelector('.text-box');
+// info.addEventListener('click', function() {
+//     info.classList.toggle('expanded');
+// });
+// ScrollReveal({
+//     reset:true,
+//     distance:'60px',
+//     duration:2000,
+//     delay:400
+// });
+// ScrollReveal().reveal('.main-title',{delay:500,origin:'left'});
+// ScrollReveal().reveal('.content2_container .image',{delay:500,origin:'left'});
+// ScrollReveal().reveal('.text-box',{delay:500,origin:'right'});
+// Animacja dla .image
+if (window.innerWidth > 900) {
+    ScrollTrigger.create({
+        animation: gsap.from(".main-title", {
+            x: "-100vw", 
+            scale: 1.2,
+        }),
+        scrub: true,
+        trigger: ".content1",
+        start: "top 20%",
+        endTrigger: ".content1",
+        end: "bottom top",
+    });
+    ScrollTrigger.create({
+        animation: gsap.from(".content2_container .image", {
+            x: "-100vw", 
+            delay: 0.5, 
+        }),
+        scrub: true,
+        trigger: ".content2_container .image",
+        start: "top 90%", 
+        end: "top 30%",  
+    });
+    
+    // Animacja dla .text-box
+    ScrollTrigger.create({
+        animation: gsap.from(".text-box", {
+            x: "100vw", 
+            delay: 0.5, 
+        }),
+        scrub: true,
+        trigger: ".text-box",
+        start: "top 90%", 
+        end: "top 40%",  
+    });
+    
+}else if (window.innerWidth<900){
+ScrollTrigger.create({
+    animation: gsap.fromTo(".main-title", 
+        {
+            y: "80vw", 
+            scale: 1.2,
+            filter: "blur(10px)", 
+            opacity: 0 
+        }, 
+        {
+            y: "0vw", 
+            scale: 1,
+            filter: "blur(0px)", 
+            opacity: 1, 
+            delay: 0.2,
+            duration: 1 
+        }
+    ),
+    scrub: true,
+    trigger: ".content1",
+    start: "top 20%", 
+    endTrigger: ".content1",
+    end: "bottom top", 
+});
+}

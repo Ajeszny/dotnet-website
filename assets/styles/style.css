@@ -209,3 +209,78 @@ body{
     color: white;
     border: transparent;
 }
+/* information block */
+.content2{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 100px;
+    width: 100vw;
+    height: 100vh;
+}
+.content2_container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.main-title{
+    font-size:4em;
+    font-weight: 300;
+    margin-bottom: -50px;
+}
+.content2_container .content{
+    position: relative;
+    width:100vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 1px;
+}
+.content .image{
+    position:relative;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    margin-top: 100px;
+}
+.content .image img{
+    z-index: 111;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.content .text-box{
+    z-index: 222;
+    background: rgba(41,35,35,0.7);
+    backdrop-filter: blur(20px);
+    padding: 20px 40px 20px 50px;
+    max-width: 35%;
+    /* max-height: 50%; */
+    /* overflow: hidden;
+    transition: max-height 0.5s ease; */
+    border: 1px solid rgba(41,35,35,0.7);
+    transform: translate(-80px,50px);
+}
+.text-box.expanded {
+    max-height: none; 
+}
+.white{
+    color: white;
+}
+.small-windowtext{
+    font-weight: 300;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+}
+.text-box p{
+    font-weight: 300;
+    font-size: 1rem;
+}
