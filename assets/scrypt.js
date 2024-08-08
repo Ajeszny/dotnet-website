@@ -185,12 +185,12 @@ var swiper = new Swiper(".slide-content", {
   gsap.fromTo(".footer",
     {
         opacity: 0,
-        y: "50vh", 
-        bottom: "-20vh" 
+        y: "30vh", 
+        bottom: "0vh" 
     },
     {
         opacity: 1,
-        y: "10vh", 
+        y: "7vh", 
         bottom: "7vh",
         scrollTrigger: {
             trigger: ".containerlog2",
