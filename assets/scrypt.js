@@ -200,3 +200,15 @@ var swiper = new Swiper(".slide-content", {
         }
     }
 );
+$(document).ready(function(){
+    $(".action").on("click", function(event){
+        event.stopPropagation();
+        $(".menu__dropdown").toggleClass("active");
+    });
+    $(document).on("click", function(){
+        $(".menu__dropdown").removeClass("active");
+    });
+    $(".menu__dropdown").on("click", function(event){
+        event.stopPropagation();
+    });
+});
