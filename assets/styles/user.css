@@ -178,6 +178,7 @@ body{
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  /* margin-top: 70px; */
 }
 .profile{
   flex: 1;
@@ -185,20 +186,74 @@ body{
   background-color: #fff;
   box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
   border-radius: 5px;
-  height: max-content;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  /* justify-content:center; */
 }
 .profile-header{
   display: flex;
   margin-left: 15px;
 }
-.profile-img{
+ .wrapper__img *{
+  margin: 0;
+  padding: 0;
+ }
+.wrapper__img{
   width: 60px;
   height: 60px;
   border-radius: 10px;
-  margin: 10px;
+  border: 5px solid #fff;
+  margin: 0px;
+  position: relative;
+  background: url('../images/img3.png');
+  background-size: 100% 100%;
+  overflow: hidden;
+}
+.my_file{
+  position: absolute;
+  right: -14px;
+  align-items: center;
+  outline: none;
+  color: transparent;
+  box-sizing: border-box;
+  width: 70px;
+  height: 70px;
+  bottom: -16px;
+  cursor: pointer;
+  transition: 0.5s;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+}
+.my_file::-webkit-file-upload-button{
+  visibility: hidden;
+}
+.my_file::before{
+  content: '  \f030';
+  font-family: fontAwesome;
+  color: #fff;
+  font-size: 30px;
+  display: inline-block;
+  -webkit-user-select:none;
+}
+.my_file::after{
+  content: 'Update';
+  font-family: 'Oswald',sans-serif; 
+  display: block;
+  color: #fff;
+  top: 32px;
+  left: 12px;
+  font-size: 14px;
+  position: absolute;
+}
+.my_file:hover{
+  opacity: 1;
 }
 .profile-text-container{
   line-height: 0.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .profile-title{
   font-family: 'Oswald',sans-serif;
@@ -225,7 +280,7 @@ body{
 }
 .menu-link.active-link{
   color: #fff;
-  background-color: #536dfe;
+  background-color:rgb(138, 57, 185);
 }
 .menu-link:hover{
   background-color: #f1f5f9;
@@ -233,22 +288,22 @@ body{
 }
 .menu-link.active-link:hover{
   color: #fff;
-  background-color: #536dfe;
+  background-color:rgb(138, 57, 185);
 }
 /*-----------------------Account Settings------------------*/
 .account{
-  flex: 2;
+  flex: 4;
   margin-left: 10px;
   background: #fff;
   box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
   border-radius: 5px;
-  height: max-content;
+  height: 70vh;
 } 
 .account-header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding:10px;
   border-bottom: 1px solid #768499;
 }
 
@@ -283,17 +338,17 @@ body{
   width: 8em;
   height: 3em;
   cursor: pointer;
-  border: 1px solid #458ff6;
+  border: 1px solid rgb(138, 57, 185);
   border-radius: 2em;
   color: #fff;
   font-weight: bold;
   margin-left: 5px;
-  background-color: #536dfe;
+  background-color: rgb(138, 57, 185);
   transition-duration: 0.3s;
   box-shadow: rgba(0,0,0,0.1);
 }
 .btn-save:hover{
-  background-color: #4053c9;
+  background-color:rgb(116, 49, 155);
 }
 .account-edit{
   display: flex;
@@ -340,16 +395,21 @@ body{
 @media screen and (max-width:768px){
   .container__user{
     flex-direction: column;
+    margin-top: 66px;
   }
   .profile{
     margin-bottom: 20px;
     margin-right: 0;
+    width:90%;
+    overflow: hidden;
   }
   .account{
     margin: 0;
+    width:90%;
   }
   .account-header{
     flex-direction: column;
+    padding:10px 0 0 10px;
   }
   .account-edit{
     flex-direction: column;
@@ -365,5 +425,201 @@ body{
     display: block;
     width: auto;
     margin-right: 10px;
+  }
+  .menu{
+    display: none;
+  }
+  .profile{
+    flex: 0;
+    height: min-content;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 0em;
+  }
+  .account{
+    flex: 0;
+    height: max-content;
+  }
+}
+/*-------------------------Account_info-------------------------------------*/
+.account_info{
+  flex: 4;
+  margin-left: 10px;
+  background: #fff;
+  box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
+  border-radius: 5px;
+  height: 70vh;
+} 
+.account_info-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:10px;
+  border-bottom: 1px solid #768499;
+}
+
+.account_info-title{
+  font-family: 'Oswald',sans-serif;
+  font-size: 20px;
+  color: #1e293b;
+  font-weight: 500;
+  margin-left: 10px;
+}
+.info_all{
+  display: flex;
+}
+.account_info-edit{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 5px;
+}
+.account_info-edit.first{
+  margin-top: 50px;
+}
+.input_info-container{
+  width: 100%;
+  display: flex;
+  margin: 0 20px;
+}
+.input_info-container label{
+  font-family: 'Oswald',sans-serif;
+  color: #768499;
+  font-size: 14px;
+}
+.input_info-container p{
+  height: 25px;
+  border-radius: 5px;
+  margin-left: 10px;
+  color: black;
+  font-family: 'Oswald',sans-serif;
+}
+@media screen and (max-width:768px){
+  .account_info{
+    margin: 0;
+    width:90%;
+  }
+  .account_info-header{
+    flex-direction: column;
+    padding:10px 0 0 10px;
+  }
+  .info_all{
+    flex-direction: column;
+  }
+  .account_info-edit{
+    flex-direction: column;
+    margin: 10px;
+  }
+  .account_info{
+    flex: 0;
+    height: max-content;
+  }
+  .input_info-container p{
+    margin-right: 10px;
+  }
+}
+
+.image_info{
+  width: 70%;
+  height: 60vh;
+  border-radius: 10px;
+  border: 5px solid #fff;
+  margin: 0px;
+  position: relative;
+  background: url('../images/img3.png');
+  background-size: 100% 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.my_file_info{
+  position: absolute;
+  align-items: center;
+  outline: none;
+  color: transparent;
+  box-sizing: border-box;
+  width: 100%;
+  height:60vh;
+
+  cursor: pointer;
+  transition: 0.5s;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+}
+.my_file_info::-webkit-file-upload-button{
+  visibility: hidden;
+}
+.my_file_info::before{
+  content: '\f030';
+  font-family: fontAwesome;
+  color: #fff;
+  font-size: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-user-select:none;
+}
+.my_file_info:hover{
+  opacity: 1;
+}
+.text_info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  width: 60%;
+}
+@media screen and (max-width:768px){
+  .info_all{
+    width: auto;
+    align-items: center;
+    height: 120vh;
+  }
+  .my_file_info::before{
+    font-size: 180px;
+  }
+}
+/*-------------------------Account_notification-------------------------------------*/
+.account_notification{
+  display: none;
+}
+.account_info{
+  display: '';
+}
+ .account{
+  display: none;
+}
+.account_notification{
+  flex: 4;
+  margin-left: 10px;
+  background: #fff;
+  box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
+  border-radius: 5px;
+  height: 70vh;
+} 
+.account_notification-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:10px;
+  border-bottom: 1px solid #768499;
+}
+
+.account_notification-title{
+  font-family: 'Oswald',sans-serif;
+  font-size: 20px;
+  color: #1e293b;
+  font-weight: 500;
+  margin-left: 10px;
+}
+@media screen and (max-width:768px){
+  .account_notification{
+    margin: 0;
+    width:90%;
+  }
+  .account_notification-header{
+    flex-direction: column;
+    padding:10px 0 0 10px;
   }
 }
