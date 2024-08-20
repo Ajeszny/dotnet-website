@@ -1,21 +1,3 @@
-gsap.fromTo(".footer",
-    {
-        opacity: 0,
-        y: "30vh", 
-        bottom: "20vh" 
-    },
-    {
-        opacity: 1,
-        y: "9vh", 
-        bottom: "7vh",
-        scrollTrigger: {
-            trigger: ".containerlog2",
-            start: "top bottom", 
-            end: "top center", 
-            scrub: true
-        }
-    }
-);
 if (window.innerWidth < 768){
     const user_div = document.querySelector(".profile-header");
     const user_menu = document.querySelector(".menu");

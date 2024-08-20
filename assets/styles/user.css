@@ -157,40 +157,45 @@ body{
   }
 }
 .footer {
-  position: fixed;
+  /* position: fixed; */
   left: 0;
   width: 100%;
-  bottom: -20vh;
   color: #fff;
   text-align: center;
-  padding-bottom: 20px;
-  opacity: 0; 
+  /* padding-bottom: 20px; */
+  opacity: 1; 
   transition: opacity 0.3s ease, bottom 0.3s ease; 
 }
 .containerlog2 {
-  height: 30vh;
-  background: rgba(230, 224, 224, 0.144);
+  height: 10vh;
+  background: #fff;
   position: relative;
 }
+
 /*----------------------User info-------------------------- */
-.container__user{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  /* margin-top: 70px; */
-}
-.profile{
-  flex: 1;
+.profile {
+  position: fixed; 
+  top: 200px; 
+  left: 10px; 
+  width: 250px; 
   margin-right: 10px;
   background-color: #fff;
-  box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   border-radius: 5px;
-  height: 70vh;
+  height: 50vh;
   display: flex;
   flex-direction: column;
-  /* justify-content:center; */
+  z-index: 1000; 
 }
+
+.container__user {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+  justify-content: center;
+  min-height: 100vh;
+  padding-left: 270px; /* Adjust this value to match the width of the fixed profile div plus some margin */
+}
+
 .profile-header{
   display: flex;
   margin-left: 15px;
@@ -299,6 +304,7 @@ body{
   border-radius: 5px;
   height: 70vh;
 } 
+
 .account-header{
   display: flex;
   justify-content: space-between;
@@ -393,15 +399,18 @@ body{
   border: 1.5px solid #536dfe;
 }
 @media screen and (max-width:768px){
-  .container__user{
-    flex-direction: column;
-    margin-top: 66px;
-  }
-  .profile{
+  .profile {
+    position: static; 
+    width: 90%; 
     margin-bottom: 20px;
-    margin-right: 0;
-    width:90%;
-    overflow: hidden;
+  }
+
+  .container__user {
+    padding-left: 0; /* Remove the left padding to make full use of screen space */
+    flex-direction: column; /* Stack the elements vertically */
+    align-items: center;
+    justify-content: center;
+    margin-top: 90px;
   }
   .account{
     margin: 0;
@@ -436,10 +445,10 @@ body{
     padding-bottom: 10px;
     margin-top: 0em;
   }
-  .account{
+  /* .account{
     flex: 0;
     height: max-content;
-  }
+  } */
 }
 /*-------------------------Account_info-------------------------------------*/
 .account_info{
@@ -596,7 +605,7 @@ body{
   background: #fff;
   box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
   border-radius: 5px;
-  height: 70vh;
+  min-height: 70vh;
 } 
 .account_notification-header{
   display: flex;
@@ -621,5 +630,128 @@ body{
   .account_notification-header{
     flex-direction: column;
     padding:10px 0 0 10px;
+  }
+}
+.notification_message{
+  border: 1px solid black;
+  margin:20px 10px 30px 5px;
+  border-radius: 20px;
+  padding: 10px 0px 0px 30px;
+  box-shadow: rgba(0,0,0,0.16) 0px 5px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  overflow:hidden;
+  width: 98%;
+}
+.not_message_header{
+  font-family: 'Oswald',sans-serif;
+  font-weight: 400;
+  font-size: 1.7rem;
+}
+.not_message_text{
+  font-family: 'Oswald',sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.fa-ellipsis-vertical{
+  position: absolute;
+  top: 7px;
+  right: 40px;
+  z-index: 109;
+  color:#31313D;
+  font-size: 20px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+/* -------------------------------eclips_menu_for_posts----------------------------- */
+.container_elips{
+  position: relative;
+display: inline-block;
+}
+.frame1{
+  width: 100px;
+  height: 80px;
+  background-color:#282828;
+  border: 2px solid rgba(255,255,255,.5);
+  border-radius: 5px;
+  position: absolute;
+  display: none;
+  top: 25px;
+  right: 35px;
+} 
+.frame1 .info{
+  font-size: 15px;
+  color: #F5F5F5;
+  cursor: pointer;
+}
+.frame1 .info{
+  height: 40px;
+} 
+.delete{
+  display: flex;
+  align-items: center;
+}
+.update{
+  display: flex;
+  align-items: center;
+}
+.delete_button{
+  border: none; 
+  font-family:'Shippori Antique',sans-serif;
+  background-color: transparent; 
+  font-size: 15px; 
+  color: #F5F5F5; 
+  cursor: pointer; 
+}
+.fa-pen{
+  margin-left: 10px;
+}
+.fa-trash{
+  margin-left: 10px;
+}
+.frame1 .info:hover{
+  background-color:#535353;
+}
+.frame1 .info button{
+  margin-left: 10px;
+}
+.frame1 .info span{
+  margin-left: 7px;
+}
+.container_elips:hover .frame1{
+  display: block;
+}
+.image_message{
+  width: 40%;
+  margin-bottom: 20px;
+}
+.account_notification{
+  margin-top: 4rem;
+}
+.account_info{
+  margin-top: 8rem;
+}
+.account{
+  margin-top: 8rem;
+}
+@media screen and (max-width:768px){
+  .notification_message{
+    width: 98%;
+  }
+  .image_message{
+    width: 90%;
+    margin-bottom: 20px;
+  }
+  .account_notification{
+    margin-top: 0rem;
+  }
+  .account_info{
+    margin-top: 0rem;
+  }
+  .account{
+    margin-top: 0rem;
   }
 }

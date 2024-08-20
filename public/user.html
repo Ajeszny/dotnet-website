@@ -76,112 +76,163 @@
         </div>
       </nav>
       <!--User section-->
-      <div class="container__user">
-        <div class="profile">
-            <div class="profile-header">
-                <div class="wrapper__img">
-                  <input type="file" class="my_file">
-                </div>
-                <div class="profile-text-container">
-                    <h1 class="profile-title">User Name</h1>
-                    <p class="profile-email">email@gmail.com</p>
-                </div>
-            </div>
-            <div class="menu">
-                <a href="#" class="menu-link profile_link_account active-link">
-                    <i class="fa-solid fa-circle-user menu-icon"></i>Account
-                </a>
-                <a href="#" class="menu-link profile_link_notification">
-                    <i class="fa-solid fa-bell menu-icon"></i>Notification
-                </a>
-                <a href="#" class="menu-link profile_link_setting">
-                    <i class="fa-solid fa-gear menu-icon"></i>Setting
-                </a>
-                <a href="#" class="menu-link">
-                    <i class="fa-solid fa-right-from-bracket menu-icon"></i>Logout
-                </a>
-            </div>
-        </div>
-        <form class="account_info">
-          <div class="account_info-header">
-              <h1 class="account_info-title">Account Info</h1>
+      <div class="all">
+        <div class="container__user">
+          <div class="profile">
+              <div class="profile-header">
+                  <div class="wrapper__img">
+                    <input type="file" class="my_file">
+                  </div>
+                  <div class="profile-text-container">
+                      <h1 class="profile-title">User Name</h1>
+                      <p class="profile-email">email@gmail.com</p>
+                  </div>
+              </div>
+              <div class="menu">
+                  <a href="#" class="menu-link profile_link_account active-link">
+                      <i class="fa-solid fa-circle-user menu-icon"></i>Account
+                  </a>
+                  <a href="#" class="menu-link profile_link_notification">
+                      <i class="fa-solid fa-bell menu-icon"></i>Notification
+                  </a>
+                  <a href="#" class="menu-link profile_link_setting">
+                      <i class="fa-solid fa-gear menu-icon"></i>Setting
+                  </a>
+                  <a href="#" class="menu-link">
+                      <i class="fa-solid fa-right-from-bracket menu-icon"></i>Logout
+                  </a>
+              </div>
           </div>
-          <div class="info_all">
-            <div class="image_info">
-              <input type="file" class="my_file_info">
+          <form class="account_info">
+            <div class="account_info-header">
+                <h1 class="account_info-title">Account Info</h1>
             </div>
-            <div class="text_info">
-                <div class="account_info-edit first">
-                  <div class="input_info-container">
-                      <label>First Name:</label>
-                      <p>Valeriia</p>
+            <div class="info_all">
+              <div class="image_info">
+                <input type="file" class="my_file_info">
+              </div>
+              <div class="text_info">
+                  <div class="account_info-edit first">
+                    <div class="input_info-container">
+                        <label>First Name:</label>
+                        <p>Valeriia</p>
+                    </div>
+                    <div class="input_info-container">
+                        <label>Last Name:</label>
+                        <p>Zlydar</p>
+                    </div>
                   </div>
-                  <div class="input_info-container">
-                      <label>Last Name:</label>
-                      <p>Zlydar</p>
+                  <div class="account_info-edit">
+                    <div class="input_info-container">
+                      <label>Email:</label>
+                      <p>marsonyteam@gmail.com</p>
+                    </div>
+                    <div class="input_info-container">
+                      <label>Phone Number:</label>
+                      <p>+480953246066</p>
+                    </div>
                   </div>
-                </div>
-                <div class="account_info-edit">
-                  <div class="input_info-container">
-                    <label>Email:</label>
-                    <p>marsonyteam@gmail.com</p>
+                  <div class="account_info-edit">
+                    <div class="input_info-container">
+                      <label>Address:</label>
+                      <p>Aleja Politechniki 9a</p>
+                    </div>
                   </div>
-                  <div class="input_info-container">
-                    <label>Phone Number:</label>
-                    <p>+480953246066</p>
-                  </div>
-                </div>
-                <div class="account_info-edit">
-                  <div class="input_info-container">
-                    <label>Address:</label>
-                    <p>Aleja Politechniki 9a</p>
-                  </div>
-                </div>
+              </div>
             </div>
-          </div>
-        </form>
-        <form class="account_notification">
-        <div class="account_notification-header">
-            <h1 class="account_notification-title">Notification</h1>
-        </div>   
-        </form>
-        <form class="account">
-            <div class="account-header">
-                <h1 class="account-title">Account Setting</h1>
-                <div class="btn-container">
-                    <button class="btn-cancel">Cancel</button>
-                    <button class="btn-save">Save</button>
+          </form>
+          <form class="account_notification">
+              <div class="account_notification-header">
+                  <h1 class="account_notification-title">Notification</h1>
+              </div>
+              <div class="notification_message_all">
+                <div class="notification_message">
+                  <div class="container_elips">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                    <div class="frame1" id="frame1">
+                        <div class="info update">
+                            <i class="fa-solid fa-pen"></i>
+                            <span>Update</span>
+                        </div>
+                        <div class="info delete">
+                            <i class="fa-solid fa-trash"></i>
+                            <form action="/comment/<%= post.PostID %>?_method=DELETE" method="post">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="delete_button">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                  </div>
+                  <h2 class="not_message_header">Notification 29/05/2024</h2>
+                  <p class="not_message_text">Pizza party You are welcome to our party lorem ipsum lorem ipsum 
+                    lorem ipsum lorem ipsum lorem ipsum lorem ipsdfjosdjfjdsljfdjskfjdskljf
+                    klsdjfljsdfjklsdfkldsjfjsdklfklsdjf kjs lorem ipsum lorem ipsum lorem ipsum lorem ipsdfjosdjfjdsljfdjskfjdskljf
+                    klsdjfljsdfjklsdfkldsjfjsdklfklsdjf kjs ldkfjdsk ljfljds lldkfjdsk ljfljds lfjls jkl jlfj sjlkdsj kljlk jdklsjfljkl</p>
                 </div>
-            </div>
+                <div class="notification_message">
+                  <div class="container_elips">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                    <div class="frame1" id="frame1">
+                        <div class="info update">
+                            <i class="fa-solid fa-pen"></i>
+                            <span>Update</span>
+                        </div>
+                        <div class="info delete">
+                            <i class="fa-solid fa-trash"></i>
+                            <form action="/comment/<%= post.PostID %>?_method=DELETE" method="post">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="delete_button">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                  </div>
+                  <h2 class="not_message_header">Notification 29/05/2034</h2>
+                  <p class="not_message_text">Pizza party You are welcome to our party lorem ipsum lorem ipsum 
+                    lorem ipsum lorem ipsum lorem ipsum lorem ipsdfjosdjfjdsljfdjskfjdskljf
+                    klsdjfljsdfjklsdfkldsjfjsdklfklsdjf kjs lorem ipsum lorem ipsum lorem ipsum lorem ipsdfjosdjfjdsljfdjskfjdskljf
+                    klsdjfljsdfjklsdfkldsjfjsdklfklsdjf kjs ldkfjdsk ljfljds lldkfjdsk ljfljds lfjls jkl jlfj sjlkdsj kljlk jdklsjfljkl</p>
+                  <img src="../assets/images/img3.png" class="image_message">
+                </div> 
+              </div> 
+          </form>
+          <form class="account">
+              <div class="account-header">
+                  <h1 class="account-title">Account Setting</h1>
+                  <div class="btn-container">
+                      <button class="btn-cancel">Cancel</button>
+                      <button class="btn-save">Save</button>
+                  </div>
+              </div>
 
-            <div class="account-edit">
-                <div class="input-container">
-                    <label>First Name</label>
-                    <input type="text" placeholder="First Name"/>
-                </div>
-                <div class="input-container">
-                    <label>Last Name</label>
-                    <input type="text" placeholder="Last Name"/>
-                </div>
-            </div>
-            <div class="account-edit">
-                <div class="input-container">
-                    <label>Email</label>
-                    <input type="email" placeholder="Email"/>
-                </div>
-                <div class="input-container">
-                    <label>Phone Number</label>
-                    <input type="text" placeholder="Phone Number"/>
-                </div>
-            </div>
-            <div class="account-edit">
-                <div class="input-container">
-                    <label>Address</label>
-                    <textarea placeholder="Address"></textarea>
-                </div>
-            </div>
-        </form>
-      </div>
+              <div class="account-edit">
+                  <div class="input-container">
+                      <label>First Name</label>
+                      <input type="text" placeholder="First Name"/>
+                  </div>
+                  <div class="input-container">
+                      <label>Last Name</label>
+                      <input type="text" placeholder="Last Name"/>
+                  </div>
+              </div>
+              <div class="account-edit">
+                  <div class="input-container">
+                      <label>Email</label>
+                      <input type="email" placeholder="Email"/>
+                  </div>
+                  <div class="input-container">
+                      <label>Phone Number</label>
+                      <input type="text" placeholder="Phone Number"/>
+                  </div>
+              </div>
+              <div class="account-edit">
+                  <div class="input-container">
+                      <label>Address</label>
+                      <textarea placeholder="Address"></textarea>
+                  </div>
+              </div>
+          </form>
+        </div> 
+      </div> 
       <!--Footer-->
       <div class="containerlog2"></div>
       <div class="footer" id="footer_main">
