@@ -1,0 +1,22 @@
+
+.footer {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  bottom: -20vh;
+  color: #fff;
+  text-align: center;
+  padding-bottom: 20px;
+  opacity: 0; 
+  transition: opacity 0.3s ease, bottom 0.3s ease; 
+}
+.containerlog2 {
+  height: 30vh;
+  background: rgba(230, 224, 224, 0.144);
+  position: relative;
+}
+.all_projects{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+} 
