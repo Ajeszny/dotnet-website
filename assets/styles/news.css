@@ -240,8 +240,8 @@ display: inline-block;
   border-radius: 5px;
   position: absolute;
   display: none;
-  top: 25px;
-  right: 35px;
+  top: 15px;
+  right: 30px;
 } 
 .frame1 .info{
   font-size: 15px;

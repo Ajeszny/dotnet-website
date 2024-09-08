@@ -1,0 +1,118 @@
+.place_for_creating_posts_in_news_section{
+    min-height: 100vh;
+    margin-top: 60px;
+    background: rgb(138, 57, 185);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding:20px;
+}
+.place_for_creating_posts_in_news_section *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald',sans-serif;
+    box-sizing: border-box;
+}
+.window_for_creating{
+    position: relative;
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+.name_of_form{
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 500;
+    text-align: center;
+}
+.form_box{
+    margin-top: 30px;
+}
+.input-box{
+    width: 100%;
+    margin-top: 20px;
+}
+.label_for_input{
+    color: #333;
+}
+.input_styling,.select-box,.input_styling_textarea{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    color: #707070;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 15px;
+}
+.input_styling_textarea{
+    height: 150px;
+}
+.input_styling[type="file"] {
+    position: relative;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.input_styling[type="file"]::-webkit-file-upload-button {
+    position: relative;
+    bottom: 3px;
+  background: rgb(138, 57, 185);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input_styling[type="file"]::-webkit-file-upload-button:hover {
+  background: rgb(126, 7, 184);
+}
+
+.column_div{
+    display: flex;
+    column-gap: 15px;
+}
+.button_to_submit_news_form{
+    height: 55px;
+    width: 100%;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    background-color: rgb(138, 57, 185);
+}
+.button_to_submit_news_form:hover{
+    background-color: rgb(126, 7, 184);
+}
+.input-box input:focus{
+    box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+}
+.select_object{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    color: #707070;
+    font-size: 1rem;
+}
+@media screen and (max-width: 500px){
+    .column_div{
+        flex-wrap: wrap;
+    }
+}
