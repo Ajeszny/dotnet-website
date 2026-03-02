@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "./styles.module.css";
+import Dropdown from "./Dropdown";
 
 function NavBar() {
   return (
     <nav className={styles.navbar}>
-      <div className={styles["link-group"]}>
+      <div className={styles.linkGroup}>
         <div>
           <a className={styles.link} href="news">
             Nowości
@@ -18,11 +19,11 @@ function NavBar() {
         </div>
       </div>
 
-      <a href="/">
-        <img src="images/logo.png" alt="Logo" className={styles.logo} />
+      <a className={styles.logo} href="/">
+        <img src="images/logo.png" alt="Logo" />
       </a>
 
-      <div className={styles["link-group"]}>
+      <div className={styles.linkGroup}>
         <div>
           <a className={styles.link} href="/">
             Home
@@ -33,11 +34,13 @@ function NavBar() {
           <a className={styles.link} href="login">
             <div className="flex flex-row justify-center items-center gap-2">
               Login
-              <img className={styles.icon} src="images/login-icon.png" />
+              <img className={styles.loginIcon} src="images/login-icon.png" />
             </div>
           </a>
         </div>
       </div>
+
+      <Dropdown />
     </nav>
   );
 }
